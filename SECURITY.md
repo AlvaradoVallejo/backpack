@@ -5,7 +5,7 @@ continue to evolve alongside our Beta program and nothing here is considered fin
 contact **security@200ms.io** for any questions, issues, or concerns. We appreciate any and all
 feedback.
 
-## 3rd party Security Audits
+## Third-Party Security Audits
 
 At the time of writing, Backpack has **not** undergone any 3rd party security audits. However,
 Backpack is in the process of engaging 3rd party firms to conduct independent security reviews of Backpack.
