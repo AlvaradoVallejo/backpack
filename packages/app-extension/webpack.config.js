@@ -47,7 +47,7 @@ const babelLoaderConfiguration = {
 };
 
 const swcLoaderConfiguration = {
-  test: [".jsx", ".js", ".tsx", ".ts"].map((ext) => new RegExp(`${ext}$`)),
+  test: /\.(js|jsx|ts|tsx)$/, ".ts"].map((ext) => new RegExp(`${ext}$`)),
   exclude: /node_modules/,
   use: {
     loader: "swc-loader",
@@ -110,19 +110,17 @@ class HideResizeObserverLoopErrorInDevPlugin {
             stage: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE,
           },
           () => {
-            Object.keys(options.entry).forEach((asset) => {
-              const filename = `${asset}.js`;
-              const file = compilation.getAsset(filename);
-              compilation.updateAsset(
-                filename,
-                new sources.RawSource(
-                  "globalThis.__filterRuntimeErrors = ({message}) => !message.includes(" +
-                    '"ResizeObserver loop completed with undelivered notifications");\n\n'.concat(
-                      file.source.source()
-                    )
-                )
-              );
-            });
+Object.keys(compiler.options.entry).forEach((asset) => {
+  const filename = `${asset}.js`;
+  const file = compilation.getAsset(filename);
+  if (!file) return;
+  compilation.updateAsset(
+    filename,
+    new sources.RawSource(
+      `globalThis.__filterRuntimeErrors = ({message}) => !message.includes("ResizeObserver loop completed with undelivered notifications");\n\n${file.source.source()}`
+    )
+  );
+});
           }
         );
       }
