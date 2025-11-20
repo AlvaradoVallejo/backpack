@@ -42,7 +42,7 @@
 ## Installing the Latest Release
 
 If you'd like to install the latest dev release, grab the latest **build.zip** [here](https://github.com/coral-xyz/backpack/releases)
-and add it to your local chrome profile, using developer mode. See the video below.
+and add it to your local Chrome profile, using developer mode. See the video below.
 
 ## Developing Locally
 
@@ -59,7 +59,7 @@ cd backpack
 
 #### Enable self-signed local SSL certs
 
-Go to chrome://flags/#allow-insecure-localhost and enable the toggle, then restart chrome. Note: Please don't enable this if you don't know what you're doing. It will leave you vulnerable to exploits if left on. It is recommended to undo this step when you are done developing.
+Go to chrome://flags/#allow-insecure-localhost and enable the switch, then restart chrome. Note: Please don't enable this if you don't know what you're doing. It will leave you vulnerable to exploits if left on. It is recommended to undo this step when you are done developing.
 
 #### Environment variables
 
